@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random div</title>
+    <style>
+        #dis{
+            width: 2000px;
+            height: 1500px;
+            background-color: rgba(0, 128, 0, 0.203);
+            border: 1vh solid black;
+            font-size: 90px;
+            text-align: center;
+            margin: auto;
+            color: aliceblue;
+            font-weight: 900;
+        }
+        #mu{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(86, 11, 151);
+            border: 2px solid black;
+            font-size: 90px;
+            text-align: center;
+           
+            color: aliceblue;
+            font-weight: 900;
+            border-radius: 30px;
+        }
+       .contrl{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+        #b1,#b2,#b3,#b4{
+            
+            height: 4vh;
+            width: 10vw;
+            display: inline-block;
+            background-color: aquamarine;
+            margin:2vh 2vw;
+            font-size: 3vh;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            body{
+                width: 100vw;
+                height: 90vh;
+                
+            }
+          #dis{
+            max-width: 300px;
+            height: 500px;
+          }
+
+          #mu{
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+          }
+
+          #b1,#b2,#b3,#b4{
+            height: 20px;
+            width: 60px;
+            border-radius: 5px;
+            border: 1px solid black;
+          }
+
+          .contrl div:hover{
+            box-shadow: 2px 2px 4px black;
+          }
+          }
+       
+    </style>
+</head>
+<body>
+    <div id="dis" ><div id="mu"></div></div>
+    <div class="contrl">
+        <div id="b1" onmousemove="up();">up</div>
+        <div id="b2" onmousemove="down();"  onmouseover="down();">down</div>
+        <div id="b3" onmousemove="right();">right</div>
+        <div id="b4" onmousemove="left();">left</div>
+    </div>
+    
+
+    <script>
+        let mu=document.getElementById("mu");
+        let t=0, r=0;
+        down=()=>{
+            if(t<1350)
+            {
+            t+=10;
+            mu.style.marginTop=t+"px";
+            }
+        }
+        up=()=>{
+            if(t>0)
+            {
+            t-=10;
+            mu.style.marginTop=t+"px";
+            }
+        }
+        right=()=>{
+            if(r<1850)
+            {
+            r+=10;
+            mu.style.marginLeft=r+"px";
+            }
+        }
+        left=()=>{
+            if(r>0)
+            {
+            r-=10;
+            mu.style.marginLeft=r+"px";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
